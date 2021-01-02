@@ -105,12 +105,7 @@ class Comments(object):
             soup = BeautifulSoup(req.text, features='html.parser')
             for li_tag in soup.findAll('li',attrs={'class': 'comment'}):
                 try:
-<<<<<<< HEAD
                     yield self.parsecomment(li_tag)
-=======
-                    yield parsecomment(li_tag)
-
->>>>>>> 93330be5ba884db3eb99f79ef470af5025f15748
                 except AttributeError:
                     #deleted comment only has text
                     if "Previous comment deleted" in str(li_tag):
